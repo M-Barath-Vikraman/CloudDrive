@@ -1,0 +1,32 @@
+# Node modules
+**/node_modules/
+
+# Environment files
+**/.env
+**/.env.local
+**/.env.production
+**/.env.development
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build folders
+**/dist/
+**/build/
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+
+# Docker
+*.tar
