@@ -16,11 +16,9 @@ RUN npm ci
 COPY . .
 
 # Define build-time arguments (ARG) for Vite environment variables
-ARG VITE_API_URL
 ARG VITE_LAMBDA_UPLOAD_URL
 
 # Set arguments as environment variables (ENV) for Vite to inject them during build time
-ENV VITE_API_URL=$VITE_API_URL
 ENV VITE_LAMBDA_UPLOAD_URL=$VITE_LAMBDA_UPLOAD_URL
 
 # Compile the application to static assets (creates the dist/ directory)

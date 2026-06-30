@@ -8,8 +8,8 @@ services:
     container_name: clouddrive-backend
     env_file:
       - ./backend/.env
-    ports:
-      - '5000:5000'
+    expose:
+      - '5000'
     restart: unless-stopped
     networks:
       - clouddrive-network
@@ -19,9 +19,6 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        # Dynamically inject the backend endpoint. Defaults to localhost for browser-to-host connection.
-        # Can be overridden via terminal or .env in root (e.g., VITE_API_URL=http://backend:5000)
-        - VITE_API_URL=${VITE_API_URL:-http://localhost:5000}
         - VITE_LAMBDA_UPLOAD_URL=${VITE_LAMBDA_UPLOAD_URL:-https://uwh0p2r2qa.execute-api.ap-south-1.amazonaws.com/dev/generate-upload-url}
     container_name: clouddrive-frontend
     ports:

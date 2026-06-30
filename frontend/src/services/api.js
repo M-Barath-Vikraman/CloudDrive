@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-// Base URL for the Express.js Backend API
-const BASE_URL = import.meta.env.VITE_API_URL;
-
 // API Client configuration for the Express.js backend
 const apiClient = axios.create({
-  baseURL: BASE_URL,
+  baseURL: '/api',
+  timeout: 30000,
+  withCredentials: false,
   headers: {
     'Content-Type': 'application/json',
   },

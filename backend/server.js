@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 // Standard Middlewares
 app.use(cors({
-  origin: '*', // Allow all cross-origin requests in development sandbox
+  origin: process.env.NODE_ENV === 'production' ? false : 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
